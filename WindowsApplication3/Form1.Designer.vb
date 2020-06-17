@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
@@ -29,11 +30,14 @@ Partial Class Form1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.p1 = New Bunifu.Framework.UI.BunifuProgressBar()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,6 +117,17 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(570, 317)
         Me.Panel3.TabIndex = 2
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Tai Le", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(491, 215)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(15, 16)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "0"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -129,7 +144,7 @@ Partial Class Form1
         Me.p1.BackColor = System.Drawing.Color.Silver
         Me.p1.BorderRadius = 5
         Me.p1.Location = New System.Drawing.Point(44, 226)
-        Me.p1.MaximumValue = 100
+        Me.p1.MaximumValue = 200
         Me.p1.Name = "p1"
         Me.p1.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.p1.Size = New System.Drawing.Size(425, 5)
@@ -158,16 +173,15 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Installing The New Microsoft Edge"
         '
-        'Label4
+        'BunifuDragControl1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Tai Le", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(491, 215)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(15, 16)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "0"
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.Panel1
+        Me.BunifuDragControl1.Vertical = True
+        '
+        'BackgroundWorker2
+        '
         '
         'Form1
         '
@@ -202,5 +216,8 @@ Partial Class Form1
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
 
 End Class
